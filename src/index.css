@@ -2,9 +2,14 @@ body {
   margin: 0;
   padding: 0;
   background-color: #000000;
+  animation: body-appear 1.5s ease-out forwards;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes body-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity:100
+  }
 }

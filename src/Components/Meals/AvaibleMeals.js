@@ -1,5 +1,5 @@
 import styles from './AvaibleMeals.module.css';
-import { MealCard } from './MealCard';
+import { MealItem } from './MealItem';
 
 const DUMMY_MEALS = [
   {
@@ -31,7 +31,7 @@ const DUMMY_MEALS = [
 export const AvaibleMeals = () => {
   return (
     <section className={styles.meals}>
-      <MealCard meals={DUMMY_MEALS} />
+      <MealItem meals={DUMMY_MEALS} />
     </section>
   );
 };
