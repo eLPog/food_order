@@ -1,0 +1,24 @@
+
+.card {
+    border:2px solid white;
+    margin:2px;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.card li:first-child {
+    background-color: #216435;
+    font-family: "Yu Gothic";
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+    padding: 0 25px;
+    border-radius: 5px;
+}
+.card li:nth-child(3) {
+    font-family:Calibri;
+    font-size: 1.1rem;
+    margin:12px
+}

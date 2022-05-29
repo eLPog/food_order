@@ -38,5 +38,6 @@
        "arrow-body-style":0,
        "arrow-spacing":0,
        "react/function-component-definition": 0,
+       "react/self-closing-comp":0
     }
   }
