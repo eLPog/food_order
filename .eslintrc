@@ -7,8 +7,7 @@
       "browser": true
     },
     "parser": "babel-eslint",
-    "plugins":["react"],
-    "extends": [
+        "extends": [
         "airbnb",
         "plugin:react/recommended"
     ],
