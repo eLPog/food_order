@@ -4,13 +4,15 @@
   },
     "env": {
       "node": true,
-      "browser": true
+      "browser": true,
+      "es6":true
     },
     "parser": "babel-eslint",
-        "extends": [
-        "airbnb",
-        "plugin:react/recommended"
-    ],
+     "plugins":["react"],
+     "extends": [
+         "airbnb",
+         "plugin:react/recommended"
+     ],
 
     "rules": {
       "no-underscore-dangle": "off",
@@ -32,6 +34,9 @@
        "linebreak-style":0,
        "no-unused-vars":0,
        "operator-linebreak":0,
-       "react/react-in-jsx-scope":0
+       "react/react-in-jsx-scope":0,
+       "arrow-body-style":0,
+       "arrow-spacing":0,
+       "react/function-component-definition": 0,
     }
   }
