@@ -1,9 +1,25 @@
-.container {
+.form {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
-input {
-    width: 2rem;
-    margin-bottom: 5px;
+
+
+
+.form button {
+    font: inherit;
+    cursor: pointer;
+    background-color: #357A4A;
+    border: 1px solid #216435;
+    color: white;
+    padding: 0.25rem 2rem;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-left:3px;
+}
+
+.form button:hover,
+.form button:active {
+    background-color: #19512A;
+    border-color: #FFFFFF;
 }
