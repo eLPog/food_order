@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-color: #000000;
   animation: body-appear 1.5s ease-out forwards;
+  overflow: hidden;
 }
 
 @keyframes body-appear {
