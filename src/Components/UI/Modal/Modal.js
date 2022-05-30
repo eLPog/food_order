@@ -1,9 +1,21 @@
 import ReactDOM from 'react-dom';
+import { useContext } from 'react';
 import styles from './Modal.module.css';
+import { ShowCartContext } from '../../../Context/ShowCartContext/ShowCartContext';
 
 const Backdrop = (props)=>{
+  const { showCartHandler } = useContext(ShowCartContext);
+
   return (
-    <div className={styles.backdrop}>
+    <div
+      className={styles.backdrop}
+      onClick={showCartHandler}
+      role="button"
+      tabIndex={0}
+      onKeyDown={escape}
+    >
+      {/*  in this case, each Component backdrop used in this application
+      closes the modal after clicking the backdrop */}
 
     </div>
   );

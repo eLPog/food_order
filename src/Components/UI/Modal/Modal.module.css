@@ -20,6 +20,12 @@
     z-index: 30;
     animation: slide-down 300ms ease-out forwards;
 }
+.content li {
+    background-color: #357A4A;
+    width: 33%;
+    color: #FFFFFF;
+    font-family: Roboto;
+}
 
 @media (min-width: 768px) {
     .modal {

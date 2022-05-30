@@ -7,7 +7,7 @@ export const MealItem = (props) => {
     <ul>
       {props.meals.map((el)=>(
         <Card key={el.id}>
-          <div className={styles.liContainer}>
+          <div>
 
             <li>
               {el.name}
