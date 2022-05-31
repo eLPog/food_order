@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import { Header } from './Components/UI/Header/Header';
 import { Meals } from './Components/Meals/Meals';
-import { Cart } from './Components/Cart/Cart/Cart';
+import { CartModal } from './Components/Cart/Cart/CartModal';
 import { ShowCartContext } from './Context/ShowCartContext/ShowCartContext';
 import { CartProvider } from './Context/CartProvider/CartProvider';
 
@@ -20,7 +20,7 @@ function App() {
         showCartHandler,
       }}
       >
-        {cartIsShow && <Cart />}
+        {cartIsShow && <CartModal />}
         <Header />
         <main>
           <Meals />
