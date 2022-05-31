@@ -6,6 +6,10 @@
     overflow: auto;
 }
 
+li {
+    font-size: 1.3rem;
+    margin:2px;
+}
 .total {
     display: flex;
     justify-content: space-between;
@@ -44,6 +48,7 @@
     background-color: #0C4A1F;
     color: white;
 }
+
 
 
 

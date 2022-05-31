@@ -4,6 +4,7 @@ import { Header } from './Components/UI/Header/Header';
 import { Meals } from './Components/Meals/Meals';
 import { Cart } from './Components/Cart/Cart/Cart';
 import { ShowCartContext } from './Context/ShowCartContext/ShowCartContext';
+import { CartProvider } from './Context/CartProvider/CartProvider';
 
 function App() {
   const [cartIsShow, setCartIsShow] = useState(false);
@@ -13,9 +14,7 @@ function App() {
   };
 
   return (
-
-    <div className="App">
-      {/* eslint-disable-next-line react/jsx-no-constructed-context-values */}
+    <CartProvider>
       <ShowCartContext.Provider value={{
         cartIsShow,
         showCartHandler,
@@ -28,7 +27,7 @@ function App() {
 
         </main>
       </ShowCartContext.Provider>
-    </div>
+    </CartProvider>
   );
 }
 

@@ -1,4 +1,4 @@
- li:first-child {
+.name {
     background-color: #216435;
     font-family: "Yu Gothic";
     font-size: 1.2rem;
@@ -6,7 +6,7 @@
     padding: 0 25px;
      border-radius: 30px 5px;
 }
- li:nth-child(3) {
+.price {
     font-family:Calibri;
     font-size: 1.1rem;
     margin:12px

@@ -2,14 +2,14 @@ import { useContext } from 'react';
 import styles from './Cart.module.css';
 import { Modal } from '../../UI/Modal/Modal';
 import { ShowCartContext } from '../../../Context/ShowCartContext/ShowCartContext';
+import { CartContext } from '../../../Context/CartContext/CartContext';
 
 export const Cart = (props) => {
+  const { totalAmount, items } = useContext(CartContext);
   const { showCartHandler } = useContext(ShowCartContext);
   const cartItems = (
     <ul className={styles['cart-items']}>
-      {[{
-        id: 213, name: 'Bób', amount: 3, price: 11.5,
-      }].map((el)=><li key={el.id}>{el.name}</li>)}
+      {items.map((el)=><li className={styles['items-summary']} key={el.id}>{el.name}</li>)}
     </ul>
   );
   return (
@@ -17,7 +17,7 @@ export const Cart = (props) => {
       {cartItems}
       <div className={styles.total}>
         <span>Total amount</span>
-        <span>413.22</span>
+        <span>{totalAmount.toFixed(2)}</span>
       </div>
       <div className={styles.actions}>
         <button className={styles['button--alt']} onClick={showCartHandler}>Close</button>
