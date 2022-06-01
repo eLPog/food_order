@@ -33,12 +33,10 @@ const cartReducer = (state, action) => {
     };
   }
   if (action.type === 'REMOVE') {
-    console.log(action.itemID);
     const existingCartItemIndex = state.items.findIndex(
       (item) => item.id === action.itemID,
     );
     const existingItem = state.items[existingCartItemIndex];
-    console.log(existingItem);
     const updatedTotalAmount = state.totalAmount - existingItem.price;
     let updatedItems;
     if (existingItem.amount === 1) {
