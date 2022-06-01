@@ -9,7 +9,14 @@
 li {
     font-size: 1.3rem;
     margin:2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
 }
+
+
+
 .total {
     display: flex;
     justify-content: space-between;
@@ -48,6 +55,18 @@ li {
     background-color: #0C4A1F;
     color: white;
 }
+.deleteBtn {
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #E98F8F;
+    border: 1px solid #EB5656;
+    padding: 0.5rem 0.5rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+    color:white;
+}
+
 
 
 
