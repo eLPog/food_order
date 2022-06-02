@@ -2,9 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #8a2b06;
+  border-bottom: 2px solid #0C4A1F;
   padding: 1rem 0;
-  margin: 1rem 0;
+  margin: 1rem 1rem;
 }
 
 .cart-item h2 {
@@ -21,7 +21,7 @@
 
 .price {
   font-weight: bold;
-  color: #8a2b06;
+  color: #0C4A1F;
 }
 
 .amount {
@@ -35,6 +35,7 @@
 .actions {
   display: flex;
   flex-direction: column;
+  margin-right: 15px;
 }
 
 @media (min-width: 768px) {
@@ -47,15 +48,14 @@
   font: inherit;
   font-weight: bold;
   font-size: 1.25rem;
-  color: #8a2b06;
-  border: 1px solid #8a2b06;
+  color: #216435;
+  border: 1px solid #216435;
   width: 3rem;
   text-align: center;
   border-radius: 6px;
   background-color: transparent;
   cursor: pointer;
-  margin-left: 1rem;
-  margin: 0.25rem;
+  margin: 0.25rem 0 0 1rem;
 }
 
 .cart-item button:hover,

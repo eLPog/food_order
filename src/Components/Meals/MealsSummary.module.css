@@ -4,7 +4,6 @@
     width: 90%;
     margin: -10rem auto 0 auto;
     position: relative;
-    background-color: rgba(41,35,52,0.7);
     color: white;
     border-radius: 14px;
     padding: 1rem;
@@ -20,11 +19,11 @@
 }
 @keyframes summary-appear {
     from {
-        background-color: rgba(41,35,52,0.1);
+        background-color: rgba(64,132,94,0.1);
         transform: translateY(-5rem);
     }
     to {
-        background-color: rgba(41,35,52,0.7);
+        background-color: rgba(40,110,70,0.7);
         transform: translateY(0);
     }
 }
