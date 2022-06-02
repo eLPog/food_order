@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import styles from './CartModal.module.css';
 import { Modal } from '../../UI/Modal/Modal';
 import { ShowCartContext } from '../../../Context/ShowCartContext/ShowCartContext';
@@ -6,8 +6,9 @@ import { CartContext } from '../../../Context/CartContext/CartContext';
 import { CartItem } from '../CartItem/CartItem';
 
 export const CartModal = (props) => {
+  const [showSummary, setShowSummary] = useState(false);
   const {
-    totalAmount, items, removeItem, addItem,
+    totalAmount, items, removeItem, addItem, clearOrder,
   } = useContext(CartContext);
   const { showCartHandler } = useContext(ShowCartContext);
 
@@ -17,6 +18,11 @@ export const CartModal = (props) => {
 
   const cartItemAddHandler = (item) => {
     addItem({ ...item, amount: 1 });
+  };
+
+  const showSummaryHandler = () => {
+    showSummary ? setShowSummary(false) : setShowSummary(true);
+    clearOrder();
   };
 
   const cartItems = (
@@ -34,20 +40,46 @@ export const CartModal = (props) => {
     </ul>
   );
   return (
-    <Modal>
-      {cartItems}
-      <div className={styles.total}>
-        <span>Total amount</span>
-        <span>
-          {totalAmount.toFixed(2)}
-          {' $'}
-        </span>
-      </div>
-      <div className={styles.actions}>
-        <button className={styles['button--alt']} onClick={showCartHandler}>Close</button>
-        {items.length > 0 && <button className={styles.button}>Order</button>}
+    <>
+      {showSummary ? (
+        <Modal>
+          {' '}
+          <div className={styles.actions}>
+            <span className={styles.info}>Thank you! We start preparing the order</span>
+            <button className={styles['button--alt']} onClick={showCartHandler}>Close</button>
+          </div>
+        </Modal>
+      ) : (
+        <Modal>
+          {' '}
+          {cartItems}
+          {totalAmount <= 0 ? (
+            <span className={styles.info}>
+              The order is empty. Add some meals to order list.
+            </span>
+          ) : (
+            <div className={styles.total}>
+              <span>Total amount</span>
+              <span>
+                $
+                {totalAmount.toFixed(2)}
+              </span>
+            </div>
+          )}
+          <div className={styles.actions}>
+            <button className={styles['button--alt']} onClick={showCartHandler}>Close</button>
+            {items.length > 0 && (
+            <button
+              className={styles.button}
+              onClick={showSummaryHandler}
+            >
+              Order
+            </button>
+            )}
 
-      </div>
-    </Modal>
+          </div>
+        </Modal>
+      )}
+    </>
   );
 };

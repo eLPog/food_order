@@ -22,7 +22,9 @@ export const MealItem = (props) => {
         </li>
         <li className={styles.description}>{props.description}</li>
         <li className={styles.price}>
+          $
           {props.price.toFixed(2)}
+
         </li>
       </div>
       <MealItemRightSide onAddToCart={addToCartHandler} price={props.price} id={props.id} />
