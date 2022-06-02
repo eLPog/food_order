@@ -1,11 +1,11 @@
-import { AvaibleMeals } from './AvaibleMeals';
+import { AvailableMeals } from './AvailableMeals';
 import { MealsSummary } from './MealsSummary';
 
 export const Meals = () => {
   return (
     <>
       <MealsSummary />
-      <AvaibleMeals />
+      <AvailableMeals />
     </>
   );
 };

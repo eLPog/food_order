@@ -1,24 +1,26 @@
+.mealsContainer{
+ display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 .name {
     background-color: #216435;
     font-family: "Yu Gothic";
     font-size: 1.2rem;
     margin-bottom: 6px;
     padding: 0 25px;
-     border-radius: 30px 5px;
+    border-radius: 30px 5px;
+    width: 200px;
 }
 .price {
     font-family:Calibri;
     font-size: 1.1rem;
     margin:12px
 }
- .description {
-     font-style: italic;
- }
+.description {
+    font-style: italic;
+}
 
- .mealItemContainer {
-     display: flex;
-     justify-content: flex-start;
- }
 .rightContainer {
     display: flex;
     flex-direction: column;

@@ -16,7 +16,7 @@ export const MealItem = (props) => {
   };
   return (
     <Card key={props.id}>
-      <div>
+      <div className={styles.mealsContainer}>
         <li className={styles.name}>
           {props.name}
         </li>
