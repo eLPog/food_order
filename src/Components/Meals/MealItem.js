@@ -16,14 +16,15 @@ export const MealItem = (props) => {
   };
   return (
     <Card key={props.id}>
-      <div>
+      <div className={styles.mealsContainer}>
         <li className={styles.name}>
           {props.name}
         </li>
         <li className={styles.description}>{props.description}</li>
         <li className={styles.price}>
-          {props.price.toFixed(2)}
           $
+          {props.price.toFixed(2)}
+
         </li>
       </div>
       <MealItemRightSide onAddToCart={addToCartHandler} price={props.price} id={props.id} />
