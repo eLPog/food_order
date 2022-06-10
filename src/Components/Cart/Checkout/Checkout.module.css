@@ -4,6 +4,12 @@ form {
     align-items: center;
     gap:3px;
 }
+.error {
+    font-size: 1.4rem;
+    color:darkred;
+    font-family: "Roboto Thin";
+    font-weight: bolder;
+}
 
 .control {
     display: flex;

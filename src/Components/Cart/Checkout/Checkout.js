@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import styles from './Checkout.module.css';
 import { CartContext } from '../../../Context/CartContext/CartContext';
 import { isFormValid } from '../../../utils/isFormValid';
@@ -7,6 +7,7 @@ export const Checkout = (props)=>{
   const {
     totalAmount, clearOrder,
   } = useContext(CartContext);
+  const [errorInfo, setErrorInfo] = useState('');
   const nameInputRef = useRef();
   const streetInputRef = useRef();
   const postalInputRef = useRef();
@@ -21,11 +22,12 @@ export const Checkout = (props)=>{
 
     const isFormularValid = isFormValid(enteredName, enteredStreet, enteredPostal, enteredCity);
     console.log(isFormularValid);
-    if (isFormularValid) {
-      console.log('Jest ok');
-      return;
+    if (isFormularValid.status) {
+      setErrorInfo('');
+      clearOrder();
+      props.showCartHandler();
     }
-    console.log('NIEWALIDOWANE');
+    setErrorInfo(isFormularValid.info);
   };
   return (
     <form onSubmit={confirmHandler}>
@@ -45,6 +47,7 @@ export const Checkout = (props)=>{
         <label htmlFor="city">City</label>
         <input type="text" id="city" ref={cityInputRef} />
       </div>
+      <p className={styles.error}>{errorInfo}</p>
       <div className={styles.actions}>
         <button className={styles['button--alt']}>Order</button>
         <button
