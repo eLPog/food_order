@@ -4,7 +4,16 @@ body {
   background-color: #000000;
   animation: body-appear 1.5s ease-out forwards;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
+body::after {
+  content: '';
+  display: block;
+  height: 50px; /* Set same as footer's height */
+}
+
+
 
 ::-webkit-scrollbar {
   width: 20px;
