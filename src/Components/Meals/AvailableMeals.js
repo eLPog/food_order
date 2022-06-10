@@ -5,6 +5,7 @@ import { MealItem } from './MealItem';
 export const AvailableMeals = () => {
   const [allMeals, setAllMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [fetchError, setFetchError] = useState();
   useEffect(()=>{
     const fetchMeals = async ()=>{
       try {
@@ -23,8 +24,10 @@ export const AvailableMeals = () => {
         setAllMeals(meals);
         setTimeout(()=>{
           setIsLoading(false);
-        }, 3000);
+        }, 2000);
       } catch (err) {
+        setIsLoading(false);
+        setFetchError('Something went wrong. Please try again.');
         console.log(err);
       }
     };
@@ -40,13 +43,27 @@ export const AvailableMeals = () => {
       price={meal.price}
     />
   ));
+
+  if (isLoading) {
+    return (
+      <section className={styles.loaderContainer}>
+        <p className={styles.loader} />
+      </section>
+    );
+  }
+  if (fetchError) {
+    return (
+      <section className={styles.meals}>
+        <p className={styles.error}>
+          {fetchError}
+        </p>
+      </section>
+    );
+  }
+
   return (
     <section className={styles.meals}>
-      {isLoading ? (
-        <p>
-          Loading...
-        </p>
-      ) : <ul>{mealsList}</ul>}
+      <ul>{mealsList}</ul>
 
     </section>
   );
