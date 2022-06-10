@@ -4,7 +4,12 @@ body {
   background-color: #000000;
   animation: body-appear 1.5s ease-out forwards;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
+
+
+
 
 ::-webkit-scrollbar {
   width: 20px;

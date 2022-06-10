@@ -10,6 +10,41 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    animation: showUl 1s ease-in-out forwards;
+}
+.loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader {
+    border: 12px solid #357A4A;
+    border-top: 12px solid #0C4A1F;
+    border-bottom: 12px solid #0C4A1F;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg); }
+}
+.error {
+    font-size: 1.5rem;
+    color:red;
+    text-align: center;
+    font-weight: bold;
+}
+@keyframes showUl  {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity:1;
+    }
+
 }
 
 @keyframes meals-appear {

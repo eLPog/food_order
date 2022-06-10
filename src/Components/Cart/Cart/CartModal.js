@@ -4,11 +4,13 @@ import { Modal } from '../../UI/Modal/Modal';
 import { ShowCartContext } from '../../../Context/ShowCartContext/ShowCartContext';
 import { CartContext } from '../../../Context/CartContext/CartContext';
 import { CartItem } from '../CartItem/CartItem';
+import { Checkout } from '../Checkout/Checkout';
 
 export const CartModal = (props) => {
   const [showSummary, setShowSummary] = useState(false);
+  const [showThanks, setShowThanks] = useState(false);
   const {
-    totalAmount, items, removeItem, addItem, clearOrder,
+    totalAmount, items, removeItem, addItem,
   } = useContext(CartContext);
   const { showCartHandler } = useContext(ShowCartContext);
 
@@ -22,7 +24,9 @@ export const CartModal = (props) => {
 
   const showSummaryHandler = () => {
     showSummary ? setShowSummary(false) : setShowSummary(true);
-    clearOrder();
+  };
+  const showThanksHandler = () => {
+    showThanks ? setShowThanks(false) : setShowThanks(true);
   };
 
   const cartItems = (
@@ -45,8 +49,18 @@ export const CartModal = (props) => {
         <Modal>
           {' '}
           <div className={styles.actions}>
-            <span className={styles.info}>Thank you! We start preparing the order</span>
-            <button className={styles['button--alt']} onClick={showCartHandler}>Close</button>
+            {showThanks ? (
+              <div className={styles.actions}>
+                <span className={styles.info}>Thank you! We start preparing the order</span>
+                <button className={styles['button--alt']} onClick={showCartHandler}>Close</button>
+              </div>
+            )
+              : (
+                <Checkout
+                  showCartHandler={showCartHandler}
+                  showThanksHandler={showThanksHandler}
+                />
+              )}
           </div>
         </Modal>
       ) : (

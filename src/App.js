@@ -24,10 +24,7 @@ function App() {
         {cartIsShow && <CartModal />}
 
         <Header />
-        <main>
-          <Meals />
-
-        </main>
+        <Meals />
         <Footer />
 
       </ShowCartContext.Provider>

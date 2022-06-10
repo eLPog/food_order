@@ -1,0 +1,34 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:3px;
+}
+.error {
+    font-size: 1.4rem;
+    color:darkred;
+    font-family: "Roboto Thin";
+    font-weight: bolder;
+}
+
+.control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.control label {
+    font-family: "Roboto Thin";
+    font-size: 1.2rem;
+}
+.control input {
+    width: 15rem;
+    border-radius: 5px;
+    height: 1.2rem;
+    border:2px solid #357A4A;
+}
+.control input:focus {
+    background-color: #9CE5C1;
+}
+.actions {
+    margin-top:5px;
+}
