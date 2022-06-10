@@ -24,7 +24,7 @@ export const AvailableMeals = () => {
         setAllMeals(meals);
         setTimeout(()=>{
           setIsLoading(false);
-        }, 2000);
+        }, 1000);
       } catch (err) {
         setIsLoading(false);
         setFetchError('Something went wrong. Please try again.');

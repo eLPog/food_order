@@ -25,7 +25,7 @@ export const Checkout = (props)=>{
     if (isFormularValid.status) {
       setErrorInfo('');
       clearOrder();
-      props.showCartHandler();
+      props.showThanksHandler();
     }
     setErrorInfo(isFormularValid.info);
   };
