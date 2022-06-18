@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import styles from './App.module.css';
 import { Header } from './Components/UI/Header/Header';
 import { Meals } from './Components/Meals/Meals';
 import { CartModal } from './Components/Cart/Cart/CartModal';
